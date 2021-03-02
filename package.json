@@ -1,0 +1,35 @@
+{
+  "name": "insa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "start": "npm run build && node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sp",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "axios": "^0.21.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.1.5",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.12.16",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^1.3.6",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0"
+  }
+}
