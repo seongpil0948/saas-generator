@@ -8,18 +8,15 @@ rootElement.id = appDiv
 body.append(rootElement)
 
 // ===== Axios && API =====
-const baseUrl = 'localhost:8000'
-// const baseUrl = 'pan.snu.ac.kr:8099'
-
 const axiosTag = document.createElement('script')
 axiosTag.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
 body.append(axiosTag)
 const axios = require('axios');
 const sendMsg = (msg: any) => {
-    return axios.post(`${baseUrl}/from_cafe/`, { msg })
+    return axios.post(`/from_cafe/`, { msg })
 }
 async function getWidget() {
-    return await axios.get(`${baseUrl}/insa/widget/`)
+    return await axios.get(`/insa/widget/`)
 }
 
 interface DataFromWidget {
