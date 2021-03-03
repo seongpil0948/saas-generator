@@ -8,10 +8,18 @@ rootElement.id = appDiv
 body.append(rootElement)
 
 // ===== Axios && API =====
+/**
+ * @쇼핑몰에서요청할스크립트URL http://pan.snu.ac.kr:8099/static/intellisys.js
+*/
+
 const axiosTag = document.createElement('script')
 axiosTag.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
 body.append(axiosTag)
-const axios = require('axios');
+const a = require('axios')
+const axios = a.create({
+    baseURL: 'http://pan.snu.ac.kr:8099',
+    timeout: 5000
+})
 const sendMsg = (msg: any) => {
     return axios.post(`/from_cafe/`, { msg })
 }
@@ -34,8 +42,8 @@ interface DataFromWidget {
 
 // === Serving Contents ====
 getWidget().then((res) => {
-    const widgetDatas = res.data.results
-    console.log(widgetDatas)
+    const widgetDatas = res
+    console.log(res, widgetDatas)
     const data: DataFromWidget = widgetDatas[widgetDatas.length - 1]
 
     let myDiv = document.getElementById(appDiv)!;
