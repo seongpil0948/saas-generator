@@ -27,19 +27,6 @@ async function getWidget() {
     return await axios.get(`/insa/widget/`)
 }
 
-interface DataFromWidget {
-    id: number
-    shop: string
-    num_of_item: number
-    box_size: string
-    item_size: string
-    created_at: string
-    updated_at: string
-    custom_item_src?: string
-    margin_top: string
-    margin_left: string
-}
-
 // === Serving Contents ====
 getWidget().then((res) => {
     const widgetDatas = res
